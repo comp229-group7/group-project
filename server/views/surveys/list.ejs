@@ -1,0 +1,60 @@
+<!--survey.ejs, Leticia Lopez, 301087698, 09-10-2020-->
+<%- include ../partials/header.ejs%>
+<body style="background-color:#DAFED1;">
+<main class="container" >
+  <div>
+    <div>
+      <h1 class="display-4">Our surveys!</h1><br> 
+      <a href="/surveys/add" class="btn btn-success" role="button">
+      <i class="fa fa-plus"></i> Create new survey</a>
+      <br><br>
+      
+      <table class="table table-bordered table-striped">
+        <!-- Header Row -->
+        <tr>
+                <% if(typeof displayName == 'string' && displayName) { %>
+
+          <th class="text-center">First Name</th>
+          <th class="text-center">Last Name</th>
+          <th class="text-center">Gender</th>
+          <th class="text-center">Age</th>
+          <th class="text-center"></th>
+          <th class="text-center"></th>
+                 <% } else { %>  
+          <th class="text-center">First Name</th>  
+          <th class="text-center">Last Name</th>  
+          <th class="text-center">Gender</th>  
+          <th class="text-center">Age</th>  
+           <% } %>  
+        </tr>
+        
+        <!-- Repeat Template Row -->
+        <% for(let count = 0; count < surveys.length; count++) { %>
+        <tr>
+          <% if(displayName == surveys[count].createdbyuser) { %> 
+          <td class="text-center"><%= surveys[count].first %></td>
+          <td class="text-center"><%= surveys[count].last %></td>
+          <td class="text-center"><%= surveys[count].gender %></td>
+          <td class="text-center"><%= surveys[count].age %></td>
+          <td class="text-center">
+            <a href="/surveys/edit/<%= surveys[count]._id %>" class="btn btn-primary btn-sm">
+            <i class="fas fa-pencil-alt"></i> Edit </a> 
+          </td>
+          <td class="text-center">
+            <a href="/surveys/delete/<%= surveys[count]._id %>" class="btn btn-danger btn-sm">
+            <i class="fas fa-trash-alt"></i> Delete </a> 
+          </td>
+            <% } else { %> 
+            <td class="text-center"><%= surveys[count].first %></td>  
+          <td class="text-center"><%= surveys[count].last %></td> 
+          <td class="text-center"><%= surveys[count].gender %></td> 
+          <td class="text-center"><%= surveys[count].age %></td> 
+             <% } %> 
+        </tr>
+        <%  } %>
+      </table><br><br><br>
+    </div>
+  </div>
+</main>
+  
+<%- include ../partials/footer.ejs%>

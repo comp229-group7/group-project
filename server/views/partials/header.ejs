@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= title %></title>
+    <!-- CSS SECTION -->
+  
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet"
+    href="https://cdn.rawgit.com/afeld/bootstrap-toc/v1.0.1/dist/bootstrap-toc.min.css"/>
+    <!-- add after bootstrap.min.js -->
+    <link rel="stylesheet" href="/bootstrap/dist/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/@fortawesome/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="/Content/app.css">
+  </head>
+  
+
+  <nav class="navbar navbar-expand navbar-light navbar-custom">
+
+    <a class="navbar-brand" href="/home">
+      <img src="../../Assets/images/surveycon-logo.png" height="50" alt="logo" loading="lazy"></a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+
+       
+        <% if (title == "Home") { %>
+        <li class="nav-item active">
+        <% } else { %>
+        <li class="nav-item">
+        <% } %>
+          <a class="nav-link" href="/home"><i class="fas fa-home"></i> Home</a>
+        </li>
+
+        <% if (title == "About") { %>
+        <li class="nav-item active">
+        <% } else { %>
+        <li class="nav-item">
+        <% } %>
+          <a class="nav-link" href="/about"><i class="fas fa-address-card"></i> About Us</a>
+        </li>
+
+        <% if (title == "Contact") { %>
+        <li class="nav-item active">
+        <% } else { %>
+        <li class="nav-item">
+        <% } %>
+          <a class="nav-link" href="/contact"><i class="fas fa-phone-alt"></i> Contact</a>
+        </li>
+
+        <% if (title == "Surveys") { %>
+        <li class="nav-item active">
+        <% } else { %>
+        <li class="nav-item">
+        <% } %>
+          <a class="nav-link" href="/surveys"><i class="fas fa-list-alt"></i> Surveys</a>
+        </li>
+
+<% if(typeof displayName == 'string' && displayName) { %>      
+          <li class="navbar-text"><i class="fas fa-user"></i> Welcome, <%= displayName %></li>
+          <li class="nav-item"><a href="/logout" class="nav-link">
+            <i class="fas fa-lg fa-sign-out-alt"></i> Logout</a></li>
+        <% } else { %>
+          <li class="nav-item"><a href="/login" class="nav-link">
+            <i class="fas fa-lg fa-sign-in-alt"></i> Login</a></li>
+        <% } %>
+
+      </ul>
+    </div>
+  </nav>
+

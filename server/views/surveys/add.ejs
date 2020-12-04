@@ -1,0 +1,83 @@
+<%- include ../partials/header.ejs%>
+<body style="background-color:#DAFED1;">
+ 
+
+
+  <div class="container" style="margin-left: auto; margin-right: auto;">
+<div class="row">
+      <div class="col-md-offset-3 col-md-8">
+        <h1 class="display-4">Add a survey</h1><br>
+        <div id="surveysData" style="display:none"><%= JSON.stringify(surveys) %></div>
+         <form id="formSurvey" class="form" method="POST"> <!--added-->
+              <div class="form-group">
+                <label for="firstTextField">First Name</label>
+                <input type="text" class="form-control" id="firstTextField"
+                placeholder="First Name" name="first" required> 
+
+              </div>
+               <div class="form-group">
+                <label for="lastTextField">Last Name</label>
+                <input type="text" class="form-control" id="lastTextField"
+                placeholder="Last Name" name="last" required> 
+              </div>
+              <div class="form-group">
+                <label for="genderTextField">Gender</label>
+                <input type="text" class="form-control" id="genderTextField"
+                placeholder="Gender" name="gender" required> 
+              </div>
+              <div class="form-group">
+                <label for="ageTextField">Age</label>
+                <input type="text" class="form-control" id="ageTextField"
+                placeholder="Age" name="age" required> 
+              </div><br><br>
+              <div class="form-group">
+                <label for="question1TextField">Please answer the following questions with a <b>Yes</b> or <b>No</b>:</label>
+              </div><br>
+              <div class="form-group">
+                <label for="question1">Have you traveled outside Canada within the last 14 days?</label><br>
+                <input type="radio" value="Y" id="question1_y" 
+                 name="question1"  required> Yes
+                 <input type="radio" value="N" id="question1_n"
+                 name="question1"  required> No
+                 <p id="id1"></p> 
+              </div><br>
+              <div class="form-group">
+                <label for="question2">Are you experiencing any COVID-related symptoms?</label><br>
+                <input type="radio" value="Y" id="question2_y"
+                 name="question2"  required> Yes
+                 <input type="radio" value="N" id="question2_n"
+                 name="question2"  required> No
+                 <p id="id2"></p>
+              </div><br>
+              <div class="form-group">
+                <label for="question3">In the last 14 days, have you had contact with any person who is confirmed or possible COVID-19 case?</label><br>
+                <input type="radio" value="Y" id="question3_y"
+                 name="question3"  required> Yes
+                 <input type="radio" value="N" id="question3_n"
+                 name="question3"  required> No
+                 <p id="id3"></p>
+              </div><br>
+              <div class="form-group">
+                <label for="question4">Have you been tested for COVID-19 and not yet received the results?</label><br>
+                <input type="radio" value="Y" id="question4_y"
+                 name="question4"  required> Yes
+                 <input type="radio" value="N" id="question4_n"
+                 name="question4"  required> No
+                 <p id="id4"></p> 
+              </div><br>
+              <div class="form-group">
+                <label for="question5">Are you currently subject to direction from a health care professional to quarantine?</label><br>
+                <input type="radio" value="Y" id="question5_y"
+                 name="question5"  required> Yes
+                 <input type="radio" value="N" id="question5_n"
+                 name="question5"  required> No
+                 <p id="id5"></p> 
+              </div><br><br>
+
+              <button type="submit" class="btn btn-primary"><i class="fa fa-check-square-o"></i>Submit</button>
+              <a href="/" class="btn btn-warning"><i class="fa fa-undo"></i> Cancel</a> <br><br><br><br><br>
+         </form>
+    </div>
+</div>
+
+    <%- include ../partials/footer.ejs%>

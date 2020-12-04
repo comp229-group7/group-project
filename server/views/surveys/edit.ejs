@@ -1,0 +1,65 @@
+<%- include ../partials/header.ejs%>
+<body style="background-color:#DAFED1;">
+
+ <main class="container" >
+ <div class="row">
+  <div class="col-md-offset-3 col-md-8">
+    <h1 class="display-4">Edit a survey</h1><br>
+    
+    <form class="form" method="POST">
+      <div class="form-group">
+        <label for="firstTextField">First Name</label>
+        <input type="text" class="form-control" id="firstTextField"
+        placeholder="First Name" name="first" value="<%= surveys.first %>" required>
+      </div>
+        <div class="form-group">
+        <label for="lastTextField">Last Name</label>
+        <input type="text" class="form-control" id="lastTextField"
+        placeholder="Last Name" name="last" value="<%= surveys.last %>" required> 
+      </div>
+      <div class="form-group">
+        <label for="genderTextField">Gender</label>
+        <input type="text" class="form-control" id="genderTextField"
+        placeholder="Gender" name="gender" value="<%= surveys.gender %>" required>
+      </div>
+      <div class="form-group">
+        <label for="ageTextField">Age</label>
+        <input type="text" class="form-control" id="ageTextField"
+        placeholder="Age" name="age" value="<%= surveys.age %>" required>
+      </div><br><br>
+      <div class="form-group">
+        <label for="question1TextField">Please answer the following questions with a <b>Yes</b> or <b>No</b>:</label>
+      </div>
+      <div class="form-group">
+        <label for="question1TextField">Have you traveled outside Canada within the last 14 days?</label>
+        <input type="text" class="form-control" id="question1TextField"
+        placeholder="Please answer" name="question1" value="<%= surveys.question1 %>" required>
+      </div>
+      <div class="form-group">
+        <label for="question2TextField">Are you experiencing any COVID-related symptoms?</label>
+        <input type="text" class="form-control" id="question2TextField"
+        placeholder="Please answer" name="question2" value="<%= surveys.question2 %>" required>
+      </div>
+      <div class="form-group">
+        <label for="question3TextField">Have you had contact within the last 14 days with any person who is confirmed or possible COVID-19 case?</label>
+        <input type="text" class="form-control" id="question3TextField"
+        placeholder="Please answer" name="question3" value="<%= surveys.question3 %>" required>
+      </div>
+      <div class="form-group">
+        <label for="question4TextField">Have you been tested for COVID-19 and not yet received the results?</label>
+        <input type="text" class="form-control" id="question4TextField"
+        placeholder="Please answer" name="question4" value="<%= surveys.question4 %>" required>
+      </div>
+      <div class="form-group">
+        <label for="question5TextField">Are you currently subject to direction from a health care professional to quarantine?</label>
+        <input type="text" class="form-control" id="question5TextField"
+        placeholder="Please answer" name="question5" value="<%= surveys.question5 %>" required>
+      </div><br><br>
+        
+        <button type="submit" class="btn btn-primary"><i class="fa fa-check-square-o"></i> Submit</button>
+        <a href="/surveys" class="btn btn-warning"><i class="fa fa-undo"></i> Cancel</a><br><br><br><br><br>
+      </form>
+    </div>
+  </div>
+
+<%- include ../partials/footer.ejs%>
